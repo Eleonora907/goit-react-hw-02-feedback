@@ -1,16 +1,16 @@
 
 import React from 'react';
-import { Button } from './feedbackOptions.styled';
+import { Button, FeedbackOptionWrapper } from './feedbackOptions.styled';
 
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
-    <div>
+    <FeedbackOptionWrapper>
       {options.map(option => (
         <Button key={option} onClick={() => onLeaveFeedback(option)}>
           {option}
         </Button>
       ))}
-    </div>
+    </FeedbackOptionWrapper>
   );
 };
