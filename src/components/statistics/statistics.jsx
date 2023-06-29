@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { StatisticsItem, StatisticsWrapper } from './statistics.styled';
+import { SectionTitle } from 'components/section/section.styled';
 
 export class Statistics extends Component {
   countTotalFeedback() {
@@ -19,14 +21,14 @@ export class Statistics extends Component {
     const positivePercentage = this.countPositiveFeedbackPercentage();
 
     return (
-      <div>
-        <h2>Statistics</h2>
-        <p>Good: {good}</p>
-        <p>Neutral: {neutral}</p>
-        <p>Bad: {bad}</p>
-        <p>Total: {total}</p>
-        <p>Positive Percentage: {positivePercentage}%</p>
-      </div>
+      <StatisticsWrapper>
+        <SectionTitle>Statistics</SectionTitle>
+        <StatisticsItem>Good: {good}</StatisticsItem>
+        <StatisticsItem>Neutral: {neutral}</StatisticsItem>
+        <StatisticsItem>Bad: {bad}</StatisticsItem>
+        <StatisticsItem>Total: {total}</StatisticsItem>
+        <StatisticsItem>Positive Percentage: {positivePercentage}%</StatisticsItem>
+      </StatisticsWrapper>
     );
   }
 }
